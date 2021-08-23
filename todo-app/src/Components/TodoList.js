@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 
 function TodoList() {
 
-    const todos = useSelector(state => state.TodoList)
+    const todos = useSelector(state => state.todoList)
     return (
         <div className="TodoList">
             <ul>

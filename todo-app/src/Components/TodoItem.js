@@ -2,17 +2,21 @@ import "../syle.css"
 import {useDispatch} from "react-redux";
 import {Button, Row, Col} from "react-bootstrap"
 
+import  {todoListActions} from "../Store/Store_ReduxToolKit"
 
 function TodoItem(props) {
 
     const dispatch = useDispatch()
 
     const deleteTodoItemhandler = () => {
-        dispatch({type: "delete", id: props.todo.id})
+        // dispatch({type: "delete", id: props.todo.id})
+        dispatch(todoListActions.delete({id: props.todo.id}))
     }
 
     const statusTodoItemhandler = () => {
-        dispatch({type: "toggleStatus", id: props.todo.id})
+        // dispatch({type: "toggleStatus", id: props.todo.id})
+        dispatch(todoListActions.toggleStatus({id: props.todo.id}))
+        // dispatch(todoListActions.toggleStatus({id: props.todo.id}))
     }
 
     // const updateTodoItemhandler = () => {

@@ -1,6 +1,7 @@
 import {useSelector, useDispatch} from "react-redux";
 import {useState} from "react";
 import {Button} from "react-bootstrap";
+import  {todoListActions} from "../Store/Store_ReduxToolKit"
 
 function TodoForm() {
 
@@ -14,7 +15,8 @@ function TodoForm() {
 
     const addNewTodoItem = (event) => {
         if(newTodoItem.length > 0) {
-            dispatch({type: "add", text: newTodoItem})
+            // dispatch({type: "add", text: newTodoItem})
+            dispatch(todoListActions.add({type: "add", text: newTodoItem}))
             setNewTodoItem("")
             // if(state.length > 0 )
             // alert(state[state.length-1].text)
